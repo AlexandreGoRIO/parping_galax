@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/homes/a19gorio/galax_eleves/src/Model/Model_GPU/kernel.cu
+cuda.h
+/homes/a19gorio/galax_eleves/src/Model/Model_GPU/cuda.h
+kernel.cuh
+/homes/a19gorio/galax_eleves/src/Model/Model_GPU/kernel.cuh
+
+/homes/a19gorio/galax_eleves/src/Model/Model_GPU/kernel.cuh
+stdio.h
+-
+
