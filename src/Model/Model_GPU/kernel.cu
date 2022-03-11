@@ -46,6 +46,7 @@ __global__ void compute_acc(float3* positionsGPU, float3* velocitiesGPU, float3*
 
 	accelerationsGPU[i] = make_float3(0.0, 0.0, 0.0);
 	for (int j = 0; j < n_particles; j++) {
+
 		if(i != j) {
 			const float3 diff = positionsGPU[j] - positionsGPU[i];
 
@@ -55,8 +56,8 @@ __global__ void compute_acc(float3* positionsGPU, float3* velocitiesGPU, float3*
 				dij = 10.0;
 			}
 			else {
-				dij = sqrt(dij);
-				dij = 10.0 / (dij * dij * dij);
+				//dij = sqrt(dij);
+				dij = 10.0 / (sqrt(dij) * dij);
 			}
 
 			accelerationsGPU[i] += diff * dij * massesGPU[j];
