@@ -4,14 +4,14 @@
 
 
 # Configuration directories and files
-SourceDirectory: /homes/a19gorio/galax_eleves/lib/cli
-BuildDirectory: /homes/a19gorio/galax_eleves/build/lib/cli
+SourceDirectory: /homes/a19lucas/Documents/parping_galax/lib/cli
+BuildDirectory: /homes/a19lucas/Documents/parping_galax/build/lib/cli
 
 # Where to place the cost data store
 CostDataFile: 
 
 # Site is something like machine.domain, i.e. pragmatic.crd
-Site: pc-df-903
+Site: pc-elec-391
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
 BuildName: Linux-c++
@@ -26,7 +26,7 @@ SubmitURL: http://
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/usr/bin/cmake" "/homes/a19gorio/galax_eleves/lib/cli"
+ConfigureCommand: "/usr/bin/cmake" "/homes/a19lucas/Documents/parping_galax/lib/cli"
 MakeCommand: /usr/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
 DefaultCTestConfigurationType: Release
 
@@ -57,9 +57,9 @@ P4UpdateOptions:
 P4UpdateCustom: 
 
 # Generic update command
-UpdateCommand: /bin/git
+UpdateCommand: 
 UpdateOptions: 
-UpdateType: git
+UpdateType: 
 
 # Compiler info
 Compiler: /bin/c++
@@ -80,8 +80,8 @@ CoverageCommand: /bin/gcov
 CoverageExtraFlags: -l
 
 # Cluster commands
-SlurmBatchCommand: SLURM_SBATCH_COMMAND-NOTFOUND
-SlurmRunCommand: SLURM_SRUN_COMMAND-NOTFOUND
+SlurmBatchCommand: /bin/sbatch
+SlurmRunCommand: /bin/srun
 
 # Testing options
 # TimeOut is the amount of time in seconds to wait for processes

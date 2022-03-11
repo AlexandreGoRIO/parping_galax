@@ -81,18 +81,28 @@ int main(int argc, char ** argv)
         if(validatePositions)
 		referenceModel = std::make_unique<Model_CPU_naive>(initstate, particlesRef);
 
-	if (core == "CPU")
+	if (core == "CPU") {
+        std::cout << "Using CPU" << std::endl;
 		model = std::make_unique<Model_CPU_naive>(initstate, particles);
+    }
 #ifdef GALAX_MODEL_CPU_FAST
 	else if (core == "CPU_FAST")
+    {
+        std::cout << "Using Fast CPU" << std::endl;
 		model = std::make_unique<Model_CPU_fast>(initstate, particles);
+    }
 #endif
 #ifdef GALAX_MODEL_GPU
 	else if (core == "GPU")
+    {
+        std::cout << "Using GPU" << std::endl;
 		model = std::make_unique<Model_GPU>(initstate, particles);
+    }
 #endif
 	else // TODO : add exception
+    {
 		exit(EXIT_FAILURE);
+    }
 
 	bool done = false;
 
@@ -113,18 +123,22 @@ int main(int argc, char ** argv)
 		timing.sample_after();
 		float fps = timing.get_current_average_FPS();
 
-		std::cout << "State updates per second: " << fps;
+		std::cout << "State updates per second: " << fps << ", ";
 
 		if(validatePositions)
 		{
 			referenceModel->step();
 			float error = model->compareParticlesState(*referenceModel);
-			std::cout << " ;               average distance vs reference: " << error;
+			std::cout << "Average distance vs reference: " << error;
 		}
 		std::cout << "\r" << std::flush;
 
-		std::string x;
-		std::cin >> x;
+        // std::cout << "PAUSE" << std::endl;
+		// std::string x;
+		// std::cin >> x;
+        // if (x == "q") {
+        //     break;
+        // }
 	}
 
 	return EXIT_SUCCESS;

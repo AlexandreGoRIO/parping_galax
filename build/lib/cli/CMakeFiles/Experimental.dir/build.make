@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /homes/a19gorio/galax_eleves
+CMAKE_SOURCE_DIR = /homes/a19lucas/Documents/parping_galax
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /homes/a19gorio/galax_eleves/build
+CMAKE_BINARY_DIR = /homes/a19lucas/Documents/parping_galax/build
 
 # Utility rule file for Experimental.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /homes/a19gorio/galax_eleves/build
 include lib/cli/CMakeFiles/Experimental.dir/progress.make
 
 lib/cli/CMakeFiles/Experimental:
-	cd /homes/a19gorio/galax_eleves/build/lib/cli && /usr/bin/ctest -D Experimental
+	cd /homes/a19lucas/Documents/parping_galax/build/lib/cli && /usr/bin/ctest -D Experimental
 
 Experimental: lib/cli/CMakeFiles/Experimental
 Experimental: lib/cli/CMakeFiles/Experimental.dir/build.make
@@ -67,10 +67,10 @@ lib/cli/CMakeFiles/Experimental.dir/build: Experimental
 .PHONY : lib/cli/CMakeFiles/Experimental.dir/build
 
 lib/cli/CMakeFiles/Experimental.dir/clean:
-	cd /homes/a19gorio/galax_eleves/build/lib/cli && $(CMAKE_COMMAND) -P CMakeFiles/Experimental.dir/cmake_clean.cmake
+	cd /homes/a19lucas/Documents/parping_galax/build/lib/cli && $(CMAKE_COMMAND) -P CMakeFiles/Experimental.dir/cmake_clean.cmake
 .PHONY : lib/cli/CMakeFiles/Experimental.dir/clean
 
 lib/cli/CMakeFiles/Experimental.dir/depend:
-	cd /homes/a19gorio/galax_eleves/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /homes/a19gorio/galax_eleves /homes/a19gorio/galax_eleves/lib/cli /homes/a19gorio/galax_eleves/build /homes/a19gorio/galax_eleves/build/lib/cli /homes/a19gorio/galax_eleves/build/lib/cli/CMakeFiles/Experimental.dir/DependInfo.cmake --color=$(COLOR)
+	cd /homes/a19lucas/Documents/parping_galax/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /homes/a19lucas/Documents/parping_galax /homes/a19lucas/Documents/parping_galax/lib/cli /homes/a19lucas/Documents/parping_galax/build /homes/a19lucas/Documents/parping_galax/build/lib/cli /homes/a19lucas/Documents/parping_galax/build/lib/cli/CMakeFiles/Experimental.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : lib/cli/CMakeFiles/Experimental.dir/depend
 

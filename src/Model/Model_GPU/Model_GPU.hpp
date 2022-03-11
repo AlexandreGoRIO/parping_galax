@@ -7,24 +7,20 @@
 
 #include <cuda_runtime.h>
 #include "kernel.cuh"
+#include "utils.hpp"
 
 class Model_GPU : public Model
 {
 private:
+	std::vector<float3> host_pos;
 
-	std::vector<float3> positionsf3    ;
-	std::vector<float3> velocitiesf3   ;
-	std::vector<float3> accelerationsf3;
-
-	float3* positionsGPU;
-	float3* velocitiesGPU;
-	float3* accelerationsGPU;
-	float*  massesGPU;
+	CudaBuffer<float3> dev_pos;
+    CudaBuffer<float3> dev_vel;
+    CudaBuffer<float3> dev_acc;
+    CudaBuffer<float> dev_mass;
 
 public:
 	Model_GPU(const Initstate& initstate, Particles& particles);
-
-	virtual ~Model_GPU();
 
 	virtual void step();
 };

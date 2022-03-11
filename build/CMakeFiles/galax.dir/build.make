@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /homes/a19gorio/galax_eleves
+CMAKE_SOURCE_DIR = /homes/a19lucas/Documents/parping_galax
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /homes/a19gorio/galax_eleves/build
+CMAKE_BINARY_DIR = /homes/a19lucas/Documents/parping_galax/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/galax.dir/depend.make
@@ -59,94 +59,94 @@ include CMakeFiles/galax.dir/flags.make
 
 CMakeFiles/galax.dir/src/Model/Model.cpp.o: CMakeFiles/galax.dir/flags.make
 CMakeFiles/galax.dir/src/Model/Model.cpp.o: ../src/Model/Model.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/a19gorio/galax_eleves/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/galax.dir/src/Model/Model.cpp.o"
-	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/galax.dir/src/Model/Model.cpp.o -c /homes/a19gorio/galax_eleves/src/Model/Model.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/a19lucas/Documents/parping_galax/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/galax.dir/src/Model/Model.cpp.o"
+	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/galax.dir/src/Model/Model.cpp.o -c /homes/a19lucas/Documents/parping_galax/src/Model/Model.cpp
 
 CMakeFiles/galax.dir/src/Model/Model.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/galax.dir/src/Model/Model.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /homes/a19gorio/galax_eleves/src/Model/Model.cpp > CMakeFiles/galax.dir/src/Model/Model.cpp.i
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /homes/a19lucas/Documents/parping_galax/src/Model/Model.cpp > CMakeFiles/galax.dir/src/Model/Model.cpp.i
 
 CMakeFiles/galax.dir/src/Model/Model.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/galax.dir/src/Model/Model.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /homes/a19gorio/galax_eleves/src/Model/Model.cpp -o CMakeFiles/galax.dir/src/Model/Model.cpp.s
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /homes/a19lucas/Documents/parping_galax/src/Model/Model.cpp -o CMakeFiles/galax.dir/src/Model/Model.cpp.s
 
 CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU.cpp.o: CMakeFiles/galax.dir/flags.make
 CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU.cpp.o: ../src/Model/Model_CPU/Model_CPU.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/a19gorio/galax_eleves/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU.cpp.o"
-	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU.cpp.o -c /homes/a19gorio/galax_eleves/src/Model/Model_CPU/Model_CPU.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/a19lucas/Documents/parping_galax/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU.cpp.o"
+	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU.cpp.o -c /homes/a19lucas/Documents/parping_galax/src/Model/Model_CPU/Model_CPU.cpp
 
 CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /homes/a19gorio/galax_eleves/src/Model/Model_CPU/Model_CPU.cpp > CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU.cpp.i
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /homes/a19lucas/Documents/parping_galax/src/Model/Model_CPU/Model_CPU.cpp > CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU.cpp.i
 
 CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /homes/a19gorio/galax_eleves/src/Model/Model_CPU/Model_CPU.cpp -o CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU.cpp.s
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /homes/a19lucas/Documents/parping_galax/src/Model/Model_CPU/Model_CPU.cpp -o CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU.cpp.s
 
 CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU_naive/Model_CPU_naive.cpp.o: CMakeFiles/galax.dir/flags.make
 CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU_naive/Model_CPU_naive.cpp.o: ../src/Model/Model_CPU/Model_CPU_naive/Model_CPU_naive.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/a19gorio/galax_eleves/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU_naive/Model_CPU_naive.cpp.o"
-	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU_naive/Model_CPU_naive.cpp.o -c /homes/a19gorio/galax_eleves/src/Model/Model_CPU/Model_CPU_naive/Model_CPU_naive.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/a19lucas/Documents/parping_galax/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU_naive/Model_CPU_naive.cpp.o"
+	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU_naive/Model_CPU_naive.cpp.o -c /homes/a19lucas/Documents/parping_galax/src/Model/Model_CPU/Model_CPU_naive/Model_CPU_naive.cpp
 
 CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU_naive/Model_CPU_naive.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU_naive/Model_CPU_naive.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /homes/a19gorio/galax_eleves/src/Model/Model_CPU/Model_CPU_naive/Model_CPU_naive.cpp > CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU_naive/Model_CPU_naive.cpp.i
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /homes/a19lucas/Documents/parping_galax/src/Model/Model_CPU/Model_CPU_naive/Model_CPU_naive.cpp > CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU_naive/Model_CPU_naive.cpp.i
 
 CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU_naive/Model_CPU_naive.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU_naive/Model_CPU_naive.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /homes/a19gorio/galax_eleves/src/Model/Model_CPU/Model_CPU_naive/Model_CPU_naive.cpp -o CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU_naive/Model_CPU_naive.cpp.s
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /homes/a19lucas/Documents/parping_galax/src/Model/Model_CPU/Model_CPU_naive/Model_CPU_naive.cpp -o CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU_naive/Model_CPU_naive.cpp.s
 
 CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU_fast/Model_CPU_fast.cpp.o: CMakeFiles/galax.dir/flags.make
 CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU_fast/Model_CPU_fast.cpp.o: ../src/Model/Model_CPU/Model_CPU_fast/Model_CPU_fast.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/a19gorio/galax_eleves/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU_fast/Model_CPU_fast.cpp.o"
-	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU_fast/Model_CPU_fast.cpp.o -c /homes/a19gorio/galax_eleves/src/Model/Model_CPU/Model_CPU_fast/Model_CPU_fast.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/a19lucas/Documents/parping_galax/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU_fast/Model_CPU_fast.cpp.o"
+	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU_fast/Model_CPU_fast.cpp.o -c /homes/a19lucas/Documents/parping_galax/src/Model/Model_CPU/Model_CPU_fast/Model_CPU_fast.cpp
 
 CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU_fast/Model_CPU_fast.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU_fast/Model_CPU_fast.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /homes/a19gorio/galax_eleves/src/Model/Model_CPU/Model_CPU_fast/Model_CPU_fast.cpp > CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU_fast/Model_CPU_fast.cpp.i
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /homes/a19lucas/Documents/parping_galax/src/Model/Model_CPU/Model_CPU_fast/Model_CPU_fast.cpp > CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU_fast/Model_CPU_fast.cpp.i
 
 CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU_fast/Model_CPU_fast.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU_fast/Model_CPU_fast.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /homes/a19gorio/galax_eleves/src/Model/Model_CPU/Model_CPU_fast/Model_CPU_fast.cpp -o CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU_fast/Model_CPU_fast.cpp.s
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /homes/a19lucas/Documents/parping_galax/src/Model/Model_CPU/Model_CPU_fast/Model_CPU_fast.cpp -o CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU_fast/Model_CPU_fast.cpp.s
 
 CMakeFiles/galax.dir/src/Initstate.cpp.o: CMakeFiles/galax.dir/flags.make
 CMakeFiles/galax.dir/src/Initstate.cpp.o: ../src/Initstate.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/a19gorio/galax_eleves/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/galax.dir/src/Initstate.cpp.o"
-	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/galax.dir/src/Initstate.cpp.o -c /homes/a19gorio/galax_eleves/src/Initstate.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/a19lucas/Documents/parping_galax/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/galax.dir/src/Initstate.cpp.o"
+	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/galax.dir/src/Initstate.cpp.o -c /homes/a19lucas/Documents/parping_galax/src/Initstate.cpp
 
 CMakeFiles/galax.dir/src/Initstate.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/galax.dir/src/Initstate.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /homes/a19gorio/galax_eleves/src/Initstate.cpp > CMakeFiles/galax.dir/src/Initstate.cpp.i
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /homes/a19lucas/Documents/parping_galax/src/Initstate.cpp > CMakeFiles/galax.dir/src/Initstate.cpp.i
 
 CMakeFiles/galax.dir/src/Initstate.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/galax.dir/src/Initstate.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /homes/a19gorio/galax_eleves/src/Initstate.cpp -o CMakeFiles/galax.dir/src/Initstate.cpp.s
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /homes/a19lucas/Documents/parping_galax/src/Initstate.cpp -o CMakeFiles/galax.dir/src/Initstate.cpp.s
 
 CMakeFiles/galax.dir/src/Timing/Timing.cpp.o: CMakeFiles/galax.dir/flags.make
 CMakeFiles/galax.dir/src/Timing/Timing.cpp.o: ../src/Timing/Timing.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/a19gorio/galax_eleves/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/galax.dir/src/Timing/Timing.cpp.o"
-	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/galax.dir/src/Timing/Timing.cpp.o -c /homes/a19gorio/galax_eleves/src/Timing/Timing.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/a19lucas/Documents/parping_galax/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/galax.dir/src/Timing/Timing.cpp.o"
+	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/galax.dir/src/Timing/Timing.cpp.o -c /homes/a19lucas/Documents/parping_galax/src/Timing/Timing.cpp
 
 CMakeFiles/galax.dir/src/Timing/Timing.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/galax.dir/src/Timing/Timing.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /homes/a19gorio/galax_eleves/src/Timing/Timing.cpp > CMakeFiles/galax.dir/src/Timing/Timing.cpp.i
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /homes/a19lucas/Documents/parping_galax/src/Timing/Timing.cpp > CMakeFiles/galax.dir/src/Timing/Timing.cpp.i
 
 CMakeFiles/galax.dir/src/Timing/Timing.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/galax.dir/src/Timing/Timing.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /homes/a19gorio/galax_eleves/src/Timing/Timing.cpp -o CMakeFiles/galax.dir/src/Timing/Timing.cpp.s
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /homes/a19lucas/Documents/parping_galax/src/Timing/Timing.cpp -o CMakeFiles/galax.dir/src/Timing/Timing.cpp.s
 
 CMakeFiles/galax.dir/src/main.cpp.o: CMakeFiles/galax.dir/flags.make
 CMakeFiles/galax.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/a19gorio/galax_eleves/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/galax.dir/src/main.cpp.o"
-	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/galax.dir/src/main.cpp.o -c /homes/a19gorio/galax_eleves/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/a19lucas/Documents/parping_galax/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/galax.dir/src/main.cpp.o"
+	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/galax.dir/src/main.cpp.o -c /homes/a19lucas/Documents/parping_galax/src/main.cpp
 
 CMakeFiles/galax.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/galax.dir/src/main.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /homes/a19gorio/galax_eleves/src/main.cpp > CMakeFiles/galax.dir/src/main.cpp.i
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /homes/a19lucas/Documents/parping_galax/src/main.cpp > CMakeFiles/galax.dir/src/main.cpp.i
 
 CMakeFiles/galax.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/galax.dir/src/main.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /homes/a19gorio/galax_eleves/src/main.cpp -o CMakeFiles/galax.dir/src/main.cpp.s
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /homes/a19lucas/Documents/parping_galax/src/main.cpp -o CMakeFiles/galax.dir/src/main.cpp.s
 
 # Object files for target galax
 galax_OBJECTS = \
@@ -181,7 +181,7 @@ bin/galax: /usr/lib/x86_64-linux-gnu/libGLEW.so
 bin/galax: /usr/lib/x86_64-linux-gnu/libcudart_static.a
 bin/galax: /usr/lib/x86_64-linux-gnu/librt.so
 bin/galax: CMakeFiles/galax.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/homes/a19gorio/galax_eleves/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable bin/galax"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/homes/a19lucas/Documents/parping_galax/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable bin/galax"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/galax.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -194,6 +194,6 @@ CMakeFiles/galax.dir/clean:
 .PHONY : CMakeFiles/galax.dir/clean
 
 CMakeFiles/galax.dir/depend:
-	cd /homes/a19gorio/galax_eleves/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /homes/a19gorio/galax_eleves /homes/a19gorio/galax_eleves /homes/a19gorio/galax_eleves/build /homes/a19gorio/galax_eleves/build /homes/a19gorio/galax_eleves/build/CMakeFiles/galax.dir/DependInfo.cmake --color=$(COLOR)
+	cd /homes/a19lucas/Documents/parping_galax/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /homes/a19lucas/Documents/parping_galax /homes/a19lucas/Documents/parping_galax /homes/a19lucas/Documents/parping_galax/build /homes/a19lucas/Documents/parping_galax/build /homes/a19lucas/Documents/parping_galax/build/CMakeFiles/galax.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/galax.dir/depend
 

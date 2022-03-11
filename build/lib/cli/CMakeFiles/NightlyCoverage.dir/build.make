@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /homes/a19gorio/galax_eleves
+CMAKE_SOURCE_DIR = /homes/a19lucas/Documents/parping_galax
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /homes/a19gorio/galax_eleves/build
+CMAKE_BINARY_DIR = /homes/a19lucas/Documents/parping_galax/build
 
 # Utility rule file for NightlyCoverage.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /homes/a19gorio/galax_eleves/build
 include lib/cli/CMakeFiles/NightlyCoverage.dir/progress.make
 
 lib/cli/CMakeFiles/NightlyCoverage:
-	cd /homes/a19gorio/galax_eleves/build/lib/cli && /usr/bin/ctest -D NightlyCoverage
+	cd /homes/a19lucas/Documents/parping_galax/build/lib/cli && /usr/bin/ctest -D NightlyCoverage
 
 NightlyCoverage: lib/cli/CMakeFiles/NightlyCoverage
 NightlyCoverage: lib/cli/CMakeFiles/NightlyCoverage.dir/build.make
@@ -67,10 +67,10 @@ lib/cli/CMakeFiles/NightlyCoverage.dir/build: NightlyCoverage
 .PHONY : lib/cli/CMakeFiles/NightlyCoverage.dir/build
 
 lib/cli/CMakeFiles/NightlyCoverage.dir/clean:
-	cd /homes/a19gorio/galax_eleves/build/lib/cli && $(CMAKE_COMMAND) -P CMakeFiles/NightlyCoverage.dir/cmake_clean.cmake
+	cd /homes/a19lucas/Documents/parping_galax/build/lib/cli && $(CMAKE_COMMAND) -P CMakeFiles/NightlyCoverage.dir/cmake_clean.cmake
 .PHONY : lib/cli/CMakeFiles/NightlyCoverage.dir/clean
 
 lib/cli/CMakeFiles/NightlyCoverage.dir/depend:
-	cd /homes/a19gorio/galax_eleves/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /homes/a19gorio/galax_eleves /homes/a19gorio/galax_eleves/lib/cli /homes/a19gorio/galax_eleves/build /homes/a19gorio/galax_eleves/build/lib/cli /homes/a19gorio/galax_eleves/build/lib/cli/CMakeFiles/NightlyCoverage.dir/DependInfo.cmake --color=$(COLOR)
+	cd /homes/a19lucas/Documents/parping_galax/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /homes/a19lucas/Documents/parping_galax /homes/a19lucas/Documents/parping_galax/lib/cli /homes/a19lucas/Documents/parping_galax/build /homes/a19lucas/Documents/parping_galax/build/lib/cli /homes/a19lucas/Documents/parping_galax/build/lib/cli/CMakeFiles/NightlyCoverage.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : lib/cli/CMakeFiles/NightlyCoverage.dir/depend
 

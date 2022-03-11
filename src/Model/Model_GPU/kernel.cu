@@ -36,25 +36,25 @@ __device__ __host__ float3 operator*(float3 a, const float b) {
 }
 
 
-__global__ void compute_acc(float3 * positionsGPU, float3 * velocitiesGPU, float3 * accelerationsGPU, float* massesGPU, int n_particles)
+__global__ void compute_acc(float3* positionsGPU, float3* velocitiesGPU, float3* accelerationsGPU, float* massesGPU, int n_particles)
 {
 	unsigned int i = blockIdx.x * blockDim.x + threadIdx.x;
 
-	accelerationsGPU[i]=make_float3(0.0, 0.0, 0.0);
-	for (int j=0;j < n_particles; j++)
-	{
-		if(i != j)
-		{
+    if (i >= n_particles) {
+        return;
+    }
+
+	accelerationsGPU[i] = make_float3(0.0, 0.0, 0.0);
+	for (int j = 0; j < n_particles; j++) {
+		if(i != j) {
 			const float3 diff = positionsGPU[j] - positionsGPU[i];
 
 			float dij = diff.x * diff.x + diff.y * diff.y + diff.z * diff.z;
 
-			if (dij < 1.0)
-			{
+			if (dij < 1.0) {
 				dij = 10.0;
 			}
-			else
-			{
+			else {
 				dij = sqrt(dij);
 				dij = 10.0 / (dij * dij * dij);
 			}
@@ -64,21 +64,24 @@ __global__ void compute_acc(float3 * positionsGPU, float3 * velocitiesGPU, float
 	}
 }
 
-__global__ void maj_pos(float3 * positionsGPU, float3 * velocitiesGPU, float3 * accelerationsGPU)
-{
+__global__ void integrate(float3* positionsGPU, float3* velocitiesGPU, float3* accelerationsGPU, int n_particles) {
 	unsigned int i = blockIdx.x * blockDim.x + threadIdx.x;
-	velocitiesGPU[i]+=accelerationsGPU[i]*2.0f;
-	positionsGPU[i]+=velocitiesGPU[i]*0.1f;
+
+    if (i >= n_particles) {
+        return;
+    }
+
+	velocitiesGPU[i] += accelerationsGPU[i] * 2.0f;
+	positionsGPU[i] += velocitiesGPU[i] * 0.1f;
 
 }
 
-void update_position_cu(float3* positionsGPU, float3* velocitiesGPU, float3* accelerationsGPU, float* massesGPU, int n_particles)
-{
+void update_position_cu(float3* positionsGPU, float3* velocitiesGPU, float3* accelerationsGPU, float* massesGPU, int n_particles) {
 	int nthreads = 128;
-	int nblocks =  (n_particles + (nthreads -1)) / nthreads;
+	int nblocks = (n_particles + (nthreads - 1)) / nthreads;
 
 	compute_acc<<<nblocks, nthreads>>>(positionsGPU, velocitiesGPU, accelerationsGPU, massesGPU, n_particles);
-	maj_pos    <<<nblocks, nthreads>>>(positionsGPU, velocitiesGPU, accelerationsGPU);
+	integrate<<<nblocks, nthreads>>>(positionsGPU, velocitiesGPU, accelerationsGPU, n_particles);
 }
 
 

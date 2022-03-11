@@ -5,107 +5,47 @@
 
 #include "Model_GPU.hpp"
 #include "kernel.cuh"
+#include "utils.hpp"
 
-
-inline bool cuda_malloc(void ** devPtr, size_t size)
-{
-	cudaError_t cudaStatus;
-	cudaStatus = cudaMalloc(devPtr, size);
-	if (cudaStatus != cudaSuccess)
-	{
-		std::cout << "error: unable to allocate buffer" << std::endl;
-		return false;
-	}
-	return true;
-}
-
-inline bool cuda_memcpy(void * dst, const void * src, size_t count, enum cudaMemcpyKind kind)
-{
-	cudaError_t cudaStatus;
-	cudaStatus = cudaMemcpy(dst, src, count, kind);
-	if (cudaStatus != cudaSuccess)
-	{
-		std::cout << "error: unable to copy buffer" << std::endl;
-		return false;
-	}
-	return true;
-}
-
-void update_position_gpu(float3* positionsGPU, float3* velocitiesGPU, float3* accelerationsGPU, float* massesGPU, int n_particles)
-{
-	update_position_cu(positionsGPU, velocitiesGPU, accelerationsGPU, massesGPU, n_particles);
-	cudaError_t cudaStatus;
-	cudaStatus = cudaDeviceSynchronize();
-	if (cudaStatus != cudaSuccess)
-		std::cout << "error: unable to synchronize threads" << std::endl;
-}
-
-
-Model_GPU
-::Model_GPU(const Initstate& initstate, Particles& particles)
-: Model(initstate, particles),
-  positionsf3    (n_particles),
-  velocitiesf3   (n_particles),
-  accelerationsf3(n_particles)
-{
-	// init cuda
-	cudaError_t cudaStatus;
-
-	cudaStatus = cudaSetDevice(0);
-	if (cudaStatus != cudaSuccess)
+Model_GPU::Model_GPU(const Initstate& initstate, Particles& particles): Model(initstate, particles) {
+	// Init CUDA
+	if (cudaSetDevice(0) != cudaSuccess) {
 		std::cout << "error: unable to setup cuda device" << std::endl;
+        return;
+    }
 
-	// Copy initial positions, velocities and accelerations to device
-	for (int i = 0; i < n_particles; i++)
-	{
-		positionsf3[i].x     = initstate.positionsx [i];
-		positionsf3[i].y     = initstate.positionsy [i];
-		positionsf3[i].z     = initstate.positionsz [i];
-		velocitiesf3[i].x    = initstate.velocitiesx[i];
-		velocitiesf3[i].y    = initstate.velocitiesy[i];
-		velocitiesf3[i].z    = initstate.velocitiesz[i];
-		accelerationsf3[i].x = 0;
-		accelerationsf3[i].y = 0;
-		accelerationsf3[i].z = 0;
+	// Interlace the positions and velocities into float3 structs
+	host_pos = std::vector<float3>(n_particles);
+    auto temp_host_vel = std::vector<float3>(n_particles);
+    auto temp_host_acc = std::vector<float3>(n_particles);
+    for (int i = 0; i < n_particles; i++) {
+		host_pos[i] = make_float3(initstate.positionsx[i], initstate.positionsy[i], initstate.positionsz[i]);
+		temp_host_vel[i] = make_float3(initstate.velocitiesx[i], initstate.velocitiesy[i], initstate.velocitiesz[i]);
+		temp_host_acc[i] = make_float3(0.0, 0.0, 0.0);
 	}
 
-	cuda_malloc((void**)&positionsGPU, n_particles * sizeof(float3));
-	cuda_memcpy(positionsGPU, positionsf3.data(), n_particles * sizeof(float3), cudaMemcpyHostToDevice);
-
-	cuda_malloc((void**)&velocitiesGPU, n_particles * sizeof(float3));
-	cuda_memcpy(velocitiesGPU, velocitiesf3.data(), n_particles * sizeof(float3), cudaMemcpyHostToDevice);
-
-	cuda_malloc((void**)&accelerationsGPU, n_particles * sizeof(float3));
-	cuda_memcpy(accelerationsGPU, accelerationsf3.data(), n_particles * sizeof(float3), cudaMemcpyHostToDevice);
-
-	cuda_malloc((void**)&massesGPU, n_particles * sizeof(float));
-	cuda_memcpy(massesGPU, initstate.masses.data(), n_particles * sizeof(float), cudaMemcpyHostToDevice);
-
-
+    // Create the device buffers
+    dev_pos = CudaBuffer(host_pos);
+    dev_vel = CudaBuffer(temp_host_vel);
+    dev_acc = CudaBuffer(temp_host_acc);
+    dev_mass = CudaBuffer(initstate.masses);
 }
 
-Model_GPU
-::~Model_GPU()
-{
-	cudaFree((void**)&positionsGPU);
-	cudaFree((void**)&velocitiesGPU);
-	cudaFree((void**)&accelerationsGPU);
-	cudaFree((void**)&massesGPU);
-}
-
-void Model_GPU
-::step()
+void Model_GPU::step()
 {
 	// Do calculations
-	update_position_gpu(positionsGPU, velocitiesGPU, accelerationsGPU, massesGPU, n_particles);
+	update_position_cu(dev_pos.dev_ptr(), dev_vel.dev_ptr(), dev_acc.dev_ptr(), dev_mass.dev_ptr(), n_particles);
+	if (cudaDeviceSynchronize() != cudaSuccess)
+		std::cout << "error: unable to synchronize threads" << std::endl;
 
 	// Copy positions to host
-	cuda_memcpy(positionsf3.data(), positionsGPU, n_particles * sizeof(float3), cudaMemcpyDeviceToHost);
-	for (int i = 0; i < n_particles; i++)
-	{
-		particles.x[i] = positionsf3[i].x;
-		particles.y[i] = positionsf3[i].y;
-		particles.z[i] = positionsf3[i].z;
+	dev_pos.retrieve(host_pos);
+
+    // De-interlace the positions
+	for (int i = 0; i < n_particles; i++) {
+		particles.x[i] = host_pos[i].x;
+		particles.y[i] = host_pos[i].y;
+		particles.z[i] = host_pos[i].z;
 	}
 }
 

@@ -121,6 +121,7 @@ CMakeFiles/galax.dir/src/main.cpp.o: ../src/Model/Model_CPU/Model_CPU_fast/Model
 CMakeFiles/galax.dir/src/main.cpp.o: ../src/Model/Model_CPU/Model_CPU_naive/Model_CPU_naive.hpp
 CMakeFiles/galax.dir/src/main.cpp.o: ../src/Model/Model_GPU/Model_GPU.hpp
 CMakeFiles/galax.dir/src/main.cpp.o: ../src/Model/Model_GPU/kernel.cuh
+CMakeFiles/galax.dir/src/main.cpp.o: ../src/Model/Model_GPU/utils.hpp
 CMakeFiles/galax.dir/src/main.cpp.o: ../src/Particles.hpp
 CMakeFiles/galax.dir/src/main.cpp.o: ../src/Timing/Timing.hpp
 CMakeFiles/galax.dir/src/main.cpp.o: ../src/main.cpp

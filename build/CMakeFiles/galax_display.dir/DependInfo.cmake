@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/homes/a19gorio/galax_eleves/src/Display/Display.cpp" "/homes/a19gorio/galax_eleves/build/CMakeFiles/galax_display.dir/src/Display/Display.cpp.o"
-  "/homes/a19gorio/galax_eleves/src/Display/Display_NO/Display_NO.cpp" "/homes/a19gorio/galax_eleves/build/CMakeFiles/galax_display.dir/src/Display/Display_NO/Display_NO.cpp.o"
-  "/homes/a19gorio/galax_eleves/src/Display/Display_SDL2/Display_SDL2.cpp" "/homes/a19gorio/galax_eleves/build/CMakeFiles/galax_display.dir/src/Display/Display_SDL2/Display_SDL2.cpp.o"
-  "/homes/a19gorio/galax_eleves/src/Particles.cpp" "/homes/a19gorio/galax_eleves/build/CMakeFiles/galax_display.dir/src/Particles.cpp.o"
+  "/homes/a19lucas/Documents/parping_galax/src/Display/Display.cpp" "/homes/a19lucas/Documents/parping_galax/build/CMakeFiles/galax_display.dir/src/Display/Display.cpp.o"
+  "/homes/a19lucas/Documents/parping_galax/src/Display/Display_NO/Display_NO.cpp" "/homes/a19lucas/Documents/parping_galax/build/CMakeFiles/galax_display.dir/src/Display/Display_NO/Display_NO.cpp.o"
+  "/homes/a19lucas/Documents/parping_galax/src/Display/Display_SDL2/Display_SDL2.cpp" "/homes/a19lucas/Documents/parping_galax/build/CMakeFiles/galax_display.dir/src/Display/Display_SDL2/Display_SDL2.cpp.o"
+  "/homes/a19lucas/Documents/parping_galax/src/Particles.cpp" "/homes/a19lucas/Documents/parping_galax/build/CMakeFiles/galax_display.dir/src/Particles.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

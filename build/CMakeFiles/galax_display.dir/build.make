@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /homes/a19gorio/galax_eleves
+CMAKE_SOURCE_DIR = /homes/a19lucas/Documents/parping_galax
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /homes/a19gorio/galax_eleves/build
+CMAKE_BINARY_DIR = /homes/a19lucas/Documents/parping_galax/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/galax_display.dir/depend.make
@@ -59,55 +59,55 @@ include CMakeFiles/galax_display.dir/flags.make
 
 CMakeFiles/galax_display.dir/src/Display/Display.cpp.o: CMakeFiles/galax_display.dir/flags.make
 CMakeFiles/galax_display.dir/src/Display/Display.cpp.o: ../src/Display/Display.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/a19gorio/galax_eleves/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/galax_display.dir/src/Display/Display.cpp.o"
-	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/galax_display.dir/src/Display/Display.cpp.o -c /homes/a19gorio/galax_eleves/src/Display/Display.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/a19lucas/Documents/parping_galax/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/galax_display.dir/src/Display/Display.cpp.o"
+	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/galax_display.dir/src/Display/Display.cpp.o -c /homes/a19lucas/Documents/parping_galax/src/Display/Display.cpp
 
 CMakeFiles/galax_display.dir/src/Display/Display.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/galax_display.dir/src/Display/Display.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /homes/a19gorio/galax_eleves/src/Display/Display.cpp > CMakeFiles/galax_display.dir/src/Display/Display.cpp.i
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /homes/a19lucas/Documents/parping_galax/src/Display/Display.cpp > CMakeFiles/galax_display.dir/src/Display/Display.cpp.i
 
 CMakeFiles/galax_display.dir/src/Display/Display.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/galax_display.dir/src/Display/Display.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /homes/a19gorio/galax_eleves/src/Display/Display.cpp -o CMakeFiles/galax_display.dir/src/Display/Display.cpp.s
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /homes/a19lucas/Documents/parping_galax/src/Display/Display.cpp -o CMakeFiles/galax_display.dir/src/Display/Display.cpp.s
 
 CMakeFiles/galax_display.dir/src/Display/Display_SDL2/Display_SDL2.cpp.o: CMakeFiles/galax_display.dir/flags.make
 CMakeFiles/galax_display.dir/src/Display/Display_SDL2/Display_SDL2.cpp.o: ../src/Display/Display_SDL2/Display_SDL2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/a19gorio/galax_eleves/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/galax_display.dir/src/Display/Display_SDL2/Display_SDL2.cpp.o"
-	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/galax_display.dir/src/Display/Display_SDL2/Display_SDL2.cpp.o -c /homes/a19gorio/galax_eleves/src/Display/Display_SDL2/Display_SDL2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/a19lucas/Documents/parping_galax/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/galax_display.dir/src/Display/Display_SDL2/Display_SDL2.cpp.o"
+	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/galax_display.dir/src/Display/Display_SDL2/Display_SDL2.cpp.o -c /homes/a19lucas/Documents/parping_galax/src/Display/Display_SDL2/Display_SDL2.cpp
 
 CMakeFiles/galax_display.dir/src/Display/Display_SDL2/Display_SDL2.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/galax_display.dir/src/Display/Display_SDL2/Display_SDL2.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /homes/a19gorio/galax_eleves/src/Display/Display_SDL2/Display_SDL2.cpp > CMakeFiles/galax_display.dir/src/Display/Display_SDL2/Display_SDL2.cpp.i
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /homes/a19lucas/Documents/parping_galax/src/Display/Display_SDL2/Display_SDL2.cpp > CMakeFiles/galax_display.dir/src/Display/Display_SDL2/Display_SDL2.cpp.i
 
 CMakeFiles/galax_display.dir/src/Display/Display_SDL2/Display_SDL2.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/galax_display.dir/src/Display/Display_SDL2/Display_SDL2.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /homes/a19gorio/galax_eleves/src/Display/Display_SDL2/Display_SDL2.cpp -o CMakeFiles/galax_display.dir/src/Display/Display_SDL2/Display_SDL2.cpp.s
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /homes/a19lucas/Documents/parping_galax/src/Display/Display_SDL2/Display_SDL2.cpp -o CMakeFiles/galax_display.dir/src/Display/Display_SDL2/Display_SDL2.cpp.s
 
 CMakeFiles/galax_display.dir/src/Display/Display_NO/Display_NO.cpp.o: CMakeFiles/galax_display.dir/flags.make
 CMakeFiles/galax_display.dir/src/Display/Display_NO/Display_NO.cpp.o: ../src/Display/Display_NO/Display_NO.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/a19gorio/galax_eleves/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/galax_display.dir/src/Display/Display_NO/Display_NO.cpp.o"
-	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/galax_display.dir/src/Display/Display_NO/Display_NO.cpp.o -c /homes/a19gorio/galax_eleves/src/Display/Display_NO/Display_NO.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/a19lucas/Documents/parping_galax/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/galax_display.dir/src/Display/Display_NO/Display_NO.cpp.o"
+	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/galax_display.dir/src/Display/Display_NO/Display_NO.cpp.o -c /homes/a19lucas/Documents/parping_galax/src/Display/Display_NO/Display_NO.cpp
 
 CMakeFiles/galax_display.dir/src/Display/Display_NO/Display_NO.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/galax_display.dir/src/Display/Display_NO/Display_NO.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /homes/a19gorio/galax_eleves/src/Display/Display_NO/Display_NO.cpp > CMakeFiles/galax_display.dir/src/Display/Display_NO/Display_NO.cpp.i
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /homes/a19lucas/Documents/parping_galax/src/Display/Display_NO/Display_NO.cpp > CMakeFiles/galax_display.dir/src/Display/Display_NO/Display_NO.cpp.i
 
 CMakeFiles/galax_display.dir/src/Display/Display_NO/Display_NO.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/galax_display.dir/src/Display/Display_NO/Display_NO.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /homes/a19gorio/galax_eleves/src/Display/Display_NO/Display_NO.cpp -o CMakeFiles/galax_display.dir/src/Display/Display_NO/Display_NO.cpp.s
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /homes/a19lucas/Documents/parping_galax/src/Display/Display_NO/Display_NO.cpp -o CMakeFiles/galax_display.dir/src/Display/Display_NO/Display_NO.cpp.s
 
 CMakeFiles/galax_display.dir/src/Particles.cpp.o: CMakeFiles/galax_display.dir/flags.make
 CMakeFiles/galax_display.dir/src/Particles.cpp.o: ../src/Particles.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/a19gorio/galax_eleves/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/galax_display.dir/src/Particles.cpp.o"
-	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/galax_display.dir/src/Particles.cpp.o -c /homes/a19gorio/galax_eleves/src/Particles.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/a19lucas/Documents/parping_galax/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/galax_display.dir/src/Particles.cpp.o"
+	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/galax_display.dir/src/Particles.cpp.o -c /homes/a19lucas/Documents/parping_galax/src/Particles.cpp
 
 CMakeFiles/galax_display.dir/src/Particles.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/galax_display.dir/src/Particles.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /homes/a19gorio/galax_eleves/src/Particles.cpp > CMakeFiles/galax_display.dir/src/Particles.cpp.i
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /homes/a19lucas/Documents/parping_galax/src/Particles.cpp > CMakeFiles/galax_display.dir/src/Particles.cpp.i
 
 CMakeFiles/galax_display.dir/src/Particles.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/galax_display.dir/src/Particles.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /homes/a19gorio/galax_eleves/src/Particles.cpp -o CMakeFiles/galax_display.dir/src/Particles.cpp.s
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /homes/a19lucas/Documents/parping_galax/src/Particles.cpp -o CMakeFiles/galax_display.dir/src/Particles.cpp.s
 
 # Object files for target galax_display
 galax_display_OBJECTS = \
@@ -132,7 +132,7 @@ libgalax_display.so: /usr/lib/x86_64-linux-gnu/libXmu.so
 libgalax_display.so: /usr/lib/x86_64-linux-gnu/libXi.so
 libgalax_display.so: /usr/lib/x86_64-linux-gnu/libGLEW.so
 libgalax_display.so: CMakeFiles/galax_display.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/homes/a19gorio/galax_eleves/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX shared library libgalax_display.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/homes/a19lucas/Documents/parping_galax/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX shared library libgalax_display.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/galax_display.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -145,6 +145,6 @@ CMakeFiles/galax_display.dir/clean:
 .PHONY : CMakeFiles/galax_display.dir/clean
 
 CMakeFiles/galax_display.dir/depend:
-	cd /homes/a19gorio/galax_eleves/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /homes/a19gorio/galax_eleves /homes/a19gorio/galax_eleves /homes/a19gorio/galax_eleves/build /homes/a19gorio/galax_eleves/build /homes/a19gorio/galax_eleves/build/CMakeFiles/galax_display.dir/DependInfo.cmake --color=$(COLOR)
+	cd /homes/a19lucas/Documents/parping_galax/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /homes/a19lucas/Documents/parping_galax /homes/a19lucas/Documents/parping_galax /homes/a19lucas/Documents/parping_galax/build /homes/a19lucas/Documents/parping_galax/build /homes/a19lucas/Documents/parping_galax/build/CMakeFiles/galax_display.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/galax_display.dir/depend
 

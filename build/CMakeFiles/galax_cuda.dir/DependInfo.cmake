@@ -5,7 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CUDA
-  "/homes/a19gorio/galax_eleves/src/Model/Model_GPU/kernel.cu" "/homes/a19gorio/galax_eleves/build/CMakeFiles/galax_cuda.dir/src/Model/Model_GPU/kernel.cu.o"
+  "/homes/a19lucas/Documents/parping_galax/src/Model/Model_GPU/kernel.cu" "/homes/a19lucas/Documents/parping_galax/build/CMakeFiles/galax_cuda.dir/src/Model/Model_GPU/kernel.cu.o"
   )
 set(CMAKE_CUDA_COMPILER_ID "NVIDIA")
 
@@ -25,7 +25,7 @@ set(CMAKE_CUDA_TARGET_INCLUDE_PATH
   "/usr/include/SDL2"
   )
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/homes/a19gorio/galax_eleves/src/Model/Model_GPU/Model_GPU.cpp" "/homes/a19gorio/galax_eleves/build/CMakeFiles/galax_cuda.dir/src/Model/Model_GPU/Model_GPU.cpp.o"
+  "/homes/a19lucas/Documents/parping_galax/src/Model/Model_GPU/Model_GPU.cpp" "/homes/a19lucas/Documents/parping_galax/build/CMakeFiles/galax_cuda.dir/src/Model/Model_GPU/Model_GPU.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -47,7 +47,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/homes/a19gorio/galax_eleves/build/CMakeFiles/galax_display.dir/DependInfo.cmake"
+  "/homes/a19lucas/Documents/parping_galax/build/CMakeFiles/galax_display.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

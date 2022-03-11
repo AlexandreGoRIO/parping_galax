@@ -7,11 +7,11 @@ CUDA_FLAGS = -O3 -DNDEBUG -Xcompiler=-fPIC
 
 CUDA_DEFINES = -DGALAX_DISPLAY_SDL2 -DGALAX_MODEL_GPU -Dgalax_cuda_EXPORTS
 
-CUDA_INCLUDES = -I/homes/a19gorio/galax_eleves/PUBLIC -I/homes/a19gorio/galax_eleves/build/src -I/homes/a19gorio/galax_eleves/lib/cli/include -I/homes/a19gorio/galax_eleves/lib/xsimd/include -I/usr/include/SDL2 
+CUDA_INCLUDES = -I/homes/a19lucas/Documents/parping_galax/PUBLIC -I/homes/a19lucas/Documents/parping_galax/build/src -I/homes/a19lucas/Documents/parping_galax/lib/cli/include -I/homes/a19lucas/Documents/parping_galax/lib/xsimd/include -I/usr/include/SDL2 
 
-CXX_FLAGS = -O3 -DNDEBUG -fPIC   -std=gnu++17
+CXX_FLAGS = -mavx2 -O3 -DNDEBUG -fPIC   -std=gnu++17
 
 CXX_DEFINES = -DGALAX_DISPLAY_SDL2 -DGALAX_MODEL_GPU -Dgalax_cuda_EXPORTS
 
-CXX_INCLUDES = -I/homes/a19gorio/galax_eleves/PUBLIC -I/homes/a19gorio/galax_eleves/build/src -I/homes/a19gorio/galax_eleves/lib/cli/include -I/homes/a19gorio/galax_eleves/lib/xsimd/include -I/usr/include/SDL2 
+CXX_INCLUDES = -I/homes/a19lucas/Documents/parping_galax/PUBLIC -I/homes/a19lucas/Documents/parping_galax/build/src -I/homes/a19lucas/Documents/parping_galax/lib/cli/include -I/homes/a19lucas/Documents/parping_galax/lib/xsimd/include -I/usr/include/SDL2 
 

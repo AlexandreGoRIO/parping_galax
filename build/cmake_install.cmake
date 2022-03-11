@@ -1,4 +1,4 @@
-# Install script for directory: /homes/a19gorio/galax_eleves
+# Install script for directory: /homes/a19lucas/Documents/parping_galax
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/homes/a19gorio/galax_eleves/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/homes/a19lucas/Documents/parping_galax/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

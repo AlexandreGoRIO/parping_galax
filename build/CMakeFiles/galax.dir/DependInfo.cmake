@@ -4,13 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/homes/a19gorio/galax_eleves/src/Initstate.cpp" "/homes/a19gorio/galax_eleves/build/CMakeFiles/galax.dir/src/Initstate.cpp.o"
-  "/homes/a19gorio/galax_eleves/src/Model/Model.cpp" "/homes/a19gorio/galax_eleves/build/CMakeFiles/galax.dir/src/Model/Model.cpp.o"
-  "/homes/a19gorio/galax_eleves/src/Model/Model_CPU/Model_CPU.cpp" "/homes/a19gorio/galax_eleves/build/CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU.cpp.o"
-  "/homes/a19gorio/galax_eleves/src/Model/Model_CPU/Model_CPU_fast/Model_CPU_fast.cpp" "/homes/a19gorio/galax_eleves/build/CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU_fast/Model_CPU_fast.cpp.o"
-  "/homes/a19gorio/galax_eleves/src/Model/Model_CPU/Model_CPU_naive/Model_CPU_naive.cpp" "/homes/a19gorio/galax_eleves/build/CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU_naive/Model_CPU_naive.cpp.o"
-  "/homes/a19gorio/galax_eleves/src/Timing/Timing.cpp" "/homes/a19gorio/galax_eleves/build/CMakeFiles/galax.dir/src/Timing/Timing.cpp.o"
-  "/homes/a19gorio/galax_eleves/src/main.cpp" "/homes/a19gorio/galax_eleves/build/CMakeFiles/galax.dir/src/main.cpp.o"
+  "/homes/a19lucas/Documents/parping_galax/src/Initstate.cpp" "/homes/a19lucas/Documents/parping_galax/build/CMakeFiles/galax.dir/src/Initstate.cpp.o"
+  "/homes/a19lucas/Documents/parping_galax/src/Model/Model.cpp" "/homes/a19lucas/Documents/parping_galax/build/CMakeFiles/galax.dir/src/Model/Model.cpp.o"
+  "/homes/a19lucas/Documents/parping_galax/src/Model/Model_CPU/Model_CPU.cpp" "/homes/a19lucas/Documents/parping_galax/build/CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU.cpp.o"
+  "/homes/a19lucas/Documents/parping_galax/src/Model/Model_CPU/Model_CPU_fast/Model_CPU_fast.cpp" "/homes/a19lucas/Documents/parping_galax/build/CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU_fast/Model_CPU_fast.cpp.o"
+  "/homes/a19lucas/Documents/parping_galax/src/Model/Model_CPU/Model_CPU_naive/Model_CPU_naive.cpp" "/homes/a19lucas/Documents/parping_galax/build/CMakeFiles/galax.dir/src/Model/Model_CPU/Model_CPU_naive/Model_CPU_naive.cpp.o"
+  "/homes/a19lucas/Documents/parping_galax/src/Timing/Timing.cpp" "/homes/a19lucas/Documents/parping_galax/build/CMakeFiles/galax.dir/src/Timing/Timing.cpp.o"
+  "/homes/a19lucas/Documents/parping_galax/src/main.cpp" "/homes/a19lucas/Documents/parping_galax/build/CMakeFiles/galax.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -31,8 +31,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/homes/a19gorio/galax_eleves/build/CMakeFiles/galax_cuda.dir/DependInfo.cmake"
-  "/homes/a19gorio/galax_eleves/build/CMakeFiles/galax_display.dir/DependInfo.cmake"
+  "/homes/a19lucas/Documents/parping_galax/build/CMakeFiles/galax_cuda.dir/DependInfo.cmake"
+  "/homes/a19lucas/Documents/parping_galax/build/CMakeFiles/galax_display.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

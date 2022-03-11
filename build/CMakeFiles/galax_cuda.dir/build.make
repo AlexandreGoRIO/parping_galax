@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /homes/a19gorio/galax_eleves
+CMAKE_SOURCE_DIR = /homes/a19lucas/Documents/parping_galax
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /homes/a19gorio/galax_eleves/build
+CMAKE_BINARY_DIR = /homes/a19lucas/Documents/parping_galax/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/galax_cuda.dir/depend.make
@@ -59,8 +59,8 @@ include CMakeFiles/galax_cuda.dir/flags.make
 
 CMakeFiles/galax_cuda.dir/src/Model/Model_GPU/kernel.cu.o: CMakeFiles/galax_cuda.dir/flags.make
 CMakeFiles/galax_cuda.dir/src/Model/Model_GPU/kernel.cu.o: ../src/Model/Model_GPU/kernel.cu
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/a19gorio/galax_eleves/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CUDA object CMakeFiles/galax_cuda.dir/src/Model/Model_GPU/kernel.cu.o"
-	/bin/nvcc  $(CUDA_DEFINES) $(CUDA_INCLUDES) $(CUDA_FLAGS) -x cu -c /homes/a19gorio/galax_eleves/src/Model/Model_GPU/kernel.cu -o CMakeFiles/galax_cuda.dir/src/Model/Model_GPU/kernel.cu.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/a19lucas/Documents/parping_galax/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CUDA object CMakeFiles/galax_cuda.dir/src/Model/Model_GPU/kernel.cu.o"
+	/bin/nvcc  $(CUDA_DEFINES) $(CUDA_INCLUDES) $(CUDA_FLAGS) -x cu -c /homes/a19lucas/Documents/parping_galax/src/Model/Model_GPU/kernel.cu -o CMakeFiles/galax_cuda.dir/src/Model/Model_GPU/kernel.cu.o
 
 CMakeFiles/galax_cuda.dir/src/Model/Model_GPU/kernel.cu.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CUDA source to CMakeFiles/galax_cuda.dir/src/Model/Model_GPU/kernel.cu.i"
@@ -72,16 +72,16 @@ CMakeFiles/galax_cuda.dir/src/Model/Model_GPU/kernel.cu.s: cmake_force
 
 CMakeFiles/galax_cuda.dir/src/Model/Model_GPU/Model_GPU.cpp.o: CMakeFiles/galax_cuda.dir/flags.make
 CMakeFiles/galax_cuda.dir/src/Model/Model_GPU/Model_GPU.cpp.o: ../src/Model/Model_GPU/Model_GPU.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/a19gorio/galax_eleves/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/galax_cuda.dir/src/Model/Model_GPU/Model_GPU.cpp.o"
-	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/galax_cuda.dir/src/Model/Model_GPU/Model_GPU.cpp.o -c /homes/a19gorio/galax_eleves/src/Model/Model_GPU/Model_GPU.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/homes/a19lucas/Documents/parping_galax/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/galax_cuda.dir/src/Model/Model_GPU/Model_GPU.cpp.o"
+	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/galax_cuda.dir/src/Model/Model_GPU/Model_GPU.cpp.o -c /homes/a19lucas/Documents/parping_galax/src/Model/Model_GPU/Model_GPU.cpp
 
 CMakeFiles/galax_cuda.dir/src/Model/Model_GPU/Model_GPU.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/galax_cuda.dir/src/Model/Model_GPU/Model_GPU.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /homes/a19gorio/galax_eleves/src/Model/Model_GPU/Model_GPU.cpp > CMakeFiles/galax_cuda.dir/src/Model/Model_GPU/Model_GPU.cpp.i
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /homes/a19lucas/Documents/parping_galax/src/Model/Model_GPU/Model_GPU.cpp > CMakeFiles/galax_cuda.dir/src/Model/Model_GPU/Model_GPU.cpp.i
 
 CMakeFiles/galax_cuda.dir/src/Model/Model_GPU/Model_GPU.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/galax_cuda.dir/src/Model/Model_GPU/Model_GPU.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /homes/a19gorio/galax_eleves/src/Model/Model_GPU/Model_GPU.cpp -o CMakeFiles/galax_cuda.dir/src/Model/Model_GPU/Model_GPU.cpp.s
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /homes/a19lucas/Documents/parping_galax/src/Model/Model_GPU/Model_GPU.cpp -o CMakeFiles/galax_cuda.dir/src/Model/Model_GPU/Model_GPU.cpp.s
 
 # Object files for target galax_cuda
 galax_cuda_OBJECTS = \
@@ -105,7 +105,7 @@ libgalax_cuda.so: /usr/lib/x86_64-linux-gnu/libXmu.so
 libgalax_cuda.so: /usr/lib/x86_64-linux-gnu/libXi.so
 libgalax_cuda.so: /usr/lib/x86_64-linux-gnu/libGLEW.so
 libgalax_cuda.so: CMakeFiles/galax_cuda.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/homes/a19gorio/galax_eleves/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared library libgalax_cuda.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/homes/a19lucas/Documents/parping_galax/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared library libgalax_cuda.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/galax_cuda.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -118,6 +118,6 @@ CMakeFiles/galax_cuda.dir/clean:
 .PHONY : CMakeFiles/galax_cuda.dir/clean
 
 CMakeFiles/galax_cuda.dir/depend:
-	cd /homes/a19gorio/galax_eleves/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /homes/a19gorio/galax_eleves /homes/a19gorio/galax_eleves /homes/a19gorio/galax_eleves/build /homes/a19gorio/galax_eleves/build /homes/a19gorio/galax_eleves/build/CMakeFiles/galax_cuda.dir/DependInfo.cmake --color=$(COLOR)
+	cd /homes/a19lucas/Documents/parping_galax/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /homes/a19lucas/Documents/parping_galax /homes/a19lucas/Documents/parping_galax /homes/a19lucas/Documents/parping_galax/build /homes/a19lucas/Documents/parping_galax/build /homes/a19lucas/Documents/parping_galax/build/CMakeFiles/galax_cuda.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/galax_cuda.dir/depend
 

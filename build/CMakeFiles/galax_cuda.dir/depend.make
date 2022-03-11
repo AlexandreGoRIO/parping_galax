@@ -9,6 +9,7 @@ CMakeFiles/galax_cuda.dir/src/Model/Model_GPU/Model_GPU.cpp.o: ../src/Model/Mode
 CMakeFiles/galax_cuda.dir/src/Model/Model_GPU/Model_GPU.cpp.o: ../src/Model/Model_GPU/Model_GPU.cpp
 CMakeFiles/galax_cuda.dir/src/Model/Model_GPU/Model_GPU.cpp.o: ../src/Model/Model_GPU/Model_GPU.hpp
 CMakeFiles/galax_cuda.dir/src/Model/Model_GPU/Model_GPU.cpp.o: ../src/Model/Model_GPU/kernel.cuh
+CMakeFiles/galax_cuda.dir/src/Model/Model_GPU/Model_GPU.cpp.o: ../src/Model/Model_GPU/utils.hpp
 CMakeFiles/galax_cuda.dir/src/Model/Model_GPU/Model_GPU.cpp.o: ../src/Particles.hpp
 CMakeFiles/galax_cuda.dir/src/Model/Model_GPU/Model_GPU.cpp.o: src/config.hpp
 

@@ -1,4 +1,4 @@
-# Install script for directory: /homes/a19gorio/galax_eleves/lib/cli
+# Install script for directory: /homes/a19lucas/Documents/parping_galax/lib/cli
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
