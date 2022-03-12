@@ -15,13 +15,13 @@ Model_GPU::Model_GPU(const Initstate& initstate, Particles& particles): Model(in
     }
 
 	// Interlace the positions and velocities into float3 structs
-	host_pos = std::vector<float3>(n_particles);
-    auto temp_host_vel = std::vector<float3>(n_particles);
-    auto temp_host_acc = std::vector<float3>(n_particles);
+	host_pos = std::vector<float4>(n_particles);
+    auto temp_host_vel = std::vector<float4>(n_particles);
+    auto temp_host_acc = std::vector<float4>(n_particles);
     for (int i = 0; i < n_particles; i++) {
-		host_pos[i] = make_float3(initstate.positionsx[i], initstate.positionsy[i], initstate.positionsz[i]);
-		temp_host_vel[i] = make_float3(initstate.velocitiesx[i], initstate.velocitiesy[i], initstate.velocitiesz[i]);
-		temp_host_acc[i] = make_float3(0.0, 0.0, 0.0);
+		host_pos[i] = make_float4(initstate.positionsx[i], initstate.positionsy[i], initstate.positionsz[i], 0.0);
+		temp_host_vel[i] = make_float4(initstate.velocitiesx[i], initstate.velocitiesy[i], initstate.velocitiesz[i], 0.0);
+		temp_host_acc[i] = make_float4(0.0, 0.0, 0.0, 0.0);
 	}
 
     // Create the device buffers

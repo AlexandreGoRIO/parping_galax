@@ -118,7 +118,7 @@ int main(int argc, char ** argv)
 		timing.sample_before();
 
 		// update particles positions
-		model  ->step();
+		model->step();
 
 		timing.sample_after();
 		float fps = timing.get_current_average_FPS();

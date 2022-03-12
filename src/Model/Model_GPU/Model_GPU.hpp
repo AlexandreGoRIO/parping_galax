@@ -12,11 +12,11 @@
 class Model_GPU : public Model
 {
 private:
-	std::vector<float3> host_pos;
+	std::vector<float4> host_pos;
 
-	CudaBuffer<float3> dev_pos;
-    CudaBuffer<float3> dev_vel;
-    CudaBuffer<float3> dev_acc;
+	CudaBuffer<float4> dev_pos;
+    CudaBuffer<float4> dev_vel;
+    CudaBuffer<float4> dev_acc;
     CudaBuffer<float> dev_mass;
 
 public:
