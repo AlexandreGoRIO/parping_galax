@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 
-void update_position_cu(float4* positionsGPU, float4* velocitiesGPU, float4* accelerationsGPU, float* massesGPU, int n_particles);
+void update_position_cu(float4* positions_masses, float4* velocities, int n_particles);
 
 #endif
 

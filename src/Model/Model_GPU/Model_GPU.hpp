@@ -12,12 +12,10 @@
 class Model_GPU : public Model
 {
 private:
-	std::vector<float4> host_pos;
+	std::vector<float4> host_pos_mass;
 
-	CudaBuffer<float4> dev_pos;
-    CudaBuffer<float4> dev_vel;
-    CudaBuffer<float4> dev_acc;
-    CudaBuffer<float> dev_mass;
+	CudaBuffer<float4> dev_pos_mass; // packed positions + mass
+    CudaBuffer<float4> dev_vel; // velocities
 
 public:
 	Model_GPU(const Initstate& initstate, Particles& particles);

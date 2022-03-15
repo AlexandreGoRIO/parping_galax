@@ -1,6 +1,10 @@
 #ifndef UTILS_H
 #define UTILS_H
 
+#include "cuda.h"
+#include <vector>
+#include <iostream>
+
 template<typename T>
 class CudaBuffer {
 public:

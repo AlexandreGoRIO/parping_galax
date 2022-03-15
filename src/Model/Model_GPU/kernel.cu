@@ -4,48 +4,52 @@
 #include "kernel.cuh"
 #include "operators.cuh"
 
-__global__ void compute_acc(float4* positionsGPU, float4* velocitiesGPU, float4* accelerationsGPU, float* massesGPU, int n_particles)
-{
-	unsigned int i = blockIdx.x * blockDim.x + threadIdx.x;
+__global__ void update_velocities(const float4* positions_masses, float4* velocities, int n_particles) {
+    int i = blockIdx.x * blockDim.x + threadIdx.x;
 
     if (i >= n_particles) {
         return;
     }
-
-	accelerationsGPU[i] = make_float4(0.0, 0.0, 0.0, 0.0);
     
-	for (int j = 0; j < n_particles; j++) {
-		if(i == j) {
-            continue;
-		}
+    float4 acc = make_float4(0.0f, 0.0f, 0.0f, 0.0f);
 
-        float4 diff = positionsGPU[j] - positionsGPU[i];
+	for (int x = 0; x < n_particles - 1; x++) {
+		int j = x < i ? x : x + 1;
+
+        float4 diff = positions_masses[j] - positions_masses[i];
 
         float dij = rnorm3df(diff.x, diff.y, diff.z);
-        dij = fminf(dij, 1.0);
-        dij = 10.0 * dij * dij * dij;
+        dij = fminf(dij, 1.0f);
+        dij = 10.0f * dij * dij * dij;
 
-        accelerationsGPU[i] += diff * dij * massesGPU[j];
+        float massj = positions_masses[j].w;
+
+        acc += diff * dij * massj;
 	}
+
+	velocities[i] += acc * 2.0f;
 }
 
-__global__ void integrate(float4* positionsGPU, float4* velocitiesGPU, float4* accelerationsGPU, int n_particles) {
-	unsigned int i = blockIdx.x * blockDim.x + threadIdx.x;
+__global__ void update_positions(float4* positions, const float4* velocities, int n_particles) {
+	int i = blockIdx.x * blockDim.x + threadIdx.x;
 
     if (i >= n_particles) {
         return;
     }
 
-	velocitiesGPU[i] += accelerationsGPU[i] * 2.0f;
-	positionsGPU[i] += velocitiesGPU[i] * 0.1f;
+	positions[i] += velocities[i] * 0.1f;
 }
 
-void update_position_cu(float4* positionsGPU, float4* velocitiesGPU, float4* accelerationsGPU, float* massesGPU, int n_particles) {
-	int nthreads = 128;
-	int nblocks = (n_particles + (nthreads - 1)) / nthreads;
+int divup(int a, int b) {
+    return (a + b - 1) / b;
+}
 
-	compute_acc<<<nblocks, nthreads>>>(positionsGPU, velocitiesGPU, accelerationsGPU, massesGPU, n_particles);
-	integrate<<<nblocks, nthreads>>>(positionsGPU, velocitiesGPU, accelerationsGPU, n_particles);
+void update_position_cu(float4* positions_masses, float4* velocities, int n_particles) {
+	int nthreads = 128;
+	int nblocks = divup(n_particles, nthreads);
+
+    update_velocities<<<nblocks, nthreads>>>(positions_masses, velocities, n_particles);
+	update_positions<<<nblocks, nthreads>>>(positions_masses, velocities, n_particles);
 }
 
 
