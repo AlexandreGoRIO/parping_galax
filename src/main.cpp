@@ -128,6 +128,8 @@ int main(int argc, char ** argv)
 		if(validatePositions)
 		{
 			referenceModel->step();
+            // model->debug_vectors();
+            // referenceModel->debug_vectors();
 			float error = model->compareParticlesState(*referenceModel);
 			std::cout << "Average distance vs reference: " << error;
 		}

@@ -4,7 +4,11 @@
 #include <string>
 #include <vector>
 
+#ifndef I_AM_NOT_THE_COMPILER
 #include "config.hpp"
+#else
+#define GALAX_ROOT ""
+#endif
 
 class Initstate
 {

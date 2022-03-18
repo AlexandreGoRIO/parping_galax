@@ -8,19 +8,19 @@
 #include <cuda_runtime.h>
 #include "kernel.cuh"
 #include "utils.hpp"
+#include "particle.hpp"
 
 class Model_GPU : public Model
 {
 private:
-	std::vector<float4> host_pos_mass;
-
-	CudaBuffer<float4> dev_pos_mass; // packed positions + mass
-    CudaBuffer<float4> dev_vel; // velocities
+    std::vector<Particle> host_particles;
+    CudaBuffer<Particle> dev_particles;
 
 public:
 	Model_GPU(const Initstate& initstate, Particles& particles);
 
 	virtual void step();
+    virtual void debug_vectors();
 };
 #endif // MODEL_GPU_HPP_
 

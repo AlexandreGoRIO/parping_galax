@@ -1,4 +1,5 @@
 #include <fstream>
+#include <iostream>
 
 #include "Initstate.hpp"
 
@@ -14,6 +15,9 @@ Initstate
 {
     std::ifstream ifs;
 	ifs.open(filename, std::ifstream::in);
+    if (!ifs.is_open()) {
+        std::cout << "Could not open " << filename << std::endl;
+    }
 	std::vector<std::vector<float> > all_particles (max_n_particles, std::vector<float>(7));
 
 	size_t n_lines_read = 0;

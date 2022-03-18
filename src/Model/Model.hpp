@@ -22,6 +22,7 @@ public:
     virtual ~Model() = default;
 
     virtual void step() = 0;
+    virtual void debug_vectors() {};
 };
 
 #endif // MODEL_HPP

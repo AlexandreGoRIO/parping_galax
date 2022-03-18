@@ -35,7 +35,8 @@ set(SRC_FILES_MAIN    ${CMAKE_CURRENT_SOURCE_DIR}/src/Model/Model.cpp
                       ${CMAKE_CURRENT_SOURCE_DIR}/src/Model/Model_CPU/Model_CPU_fast/Model_CPU_fast.cpp
                       ${CMAKE_CURRENT_SOURCE_DIR}/src/Initstate.cpp
                       ${CMAKE_CURRENT_SOURCE_DIR}/src/Timing/Timing.cpp
-                      ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
+                      ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
+                      ${CMAKE_CURRENT_SOURCE_DIR}/src/Model/Model_GPU/octree.cpp)
 
 configure_file("${CMAKE_CURRENT_SOURCE_DIR}/src/config.hpp.in" "${CMAKE_CURRENT_BINARY_DIR}/src/config.hpp" @ONLY)
 include_directories (PUBLIC "${CMAKE_CURRENT_BINARY_DIR}/src/")

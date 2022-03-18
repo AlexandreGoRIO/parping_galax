@@ -4,8 +4,9 @@
 #define __KERNEL_CUH__
 
 #include <stdio.h>
+#include "particle.hpp"
 
-void update_position_cu(float4* positions_masses, float4* velocities, int n_particles);
+void update_position_cu(ParticleDev* particles, int n_particles);
 
 #endif
 

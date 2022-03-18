@@ -19,5 +19,6 @@ public:
     virtual ~Model_CPU() = default;
 
     virtual void step() = 0;
+    virtual void debug_vectors() {}
 };
 #endif // MODEL_CPU_NAIVE_HPP_
