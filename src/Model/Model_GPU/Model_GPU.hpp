@@ -5,16 +5,19 @@
 
 #include "../Model.hpp"
 
-#include <cuda_runtime.h>
 #include "kernel.cuh"
 #include "utils.hpp"
-#include "particle.hpp"
+#include <array>
 
 class Model_GPU : public Model
 {
 private:
-    std::vector<Particle> host_particles;
-    CudaBuffer<Particle> dev_particles;
+    // CPU-side memory
+    std::vector<float4> host_position_mass;
+
+    // GPU-side memory
+    CudaBuffer<float4> dev_position_mass;
+    CudaBuffer<float4> dev_velocity;
 
 public:
 	Model_GPU(const Initstate& initstate, Particles& particles);

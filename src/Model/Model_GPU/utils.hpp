@@ -1,9 +1,13 @@
 #ifndef UTILS_H
 #define UTILS_H
 
-#include "cuda.h"
+#include "cuda_runtime.h"
 #include <vector>
 #include <iostream>
+
+inline int div_round_up(int a, int b) {
+    return (a + b - 1) / b;
+}
 
 template<typename T>
 class CudaBuffer {
