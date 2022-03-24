@@ -10,7 +10,7 @@
 
 constexpr int THREADS_PER_BLOCK = 128;
 
-void update_positions_cu(float4* position_mass_pack, float4* velocity, int n_particles);
+void update_positions_cu(float4* position_mass_pack, float4* velocity, float4* acceleration, int n_particles);
 
 #endif
 #endif // GALAX_MODEL_GPU

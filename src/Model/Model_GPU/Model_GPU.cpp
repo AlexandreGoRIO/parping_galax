@@ -15,11 +15,12 @@ Model_GPU::Model_GPU(const Initstate& initstate, Particles& particles): Model(in
         return;
     }
 
-	// Interlace the positions and velocities into float4 arrays
     int n_particles_padded = div_round_up(n_particles, THREADS_PER_BLOCK) * THREADS_PER_BLOCK;
     host_position_mass.resize(n_particles_padded);
     std::vector<float4> temp_host_velocity(n_particles_padded);
+    std::vector<float4> temp_host_acceleration(n_particles_padded);
 
+	// Interlace the positions and velocities into float4 arrays
     for (int i = 0; i < n_particles_padded; i++) {
         host_position_mass[i] = make_float4(
             initstate.positionsx[i], initstate.positionsy[i], initstate.positionsz[i], initstate.masses[i]
@@ -28,6 +29,8 @@ Model_GPU::Model_GPU(const Initstate& initstate, Particles& particles): Model(in
             initstate.velocitiesx[i], initstate.velocitiesy[i], initstate.velocitiesz[i], 0.0f
         );
     }
+
+    // Fill the rest of the arrays with particles that have no mass
     for (int i = n_particles; i < n_particles_padded; i++) {
         host_position_mass[i] = make_float4(0.0f, 0.0f, 0.0f, 0.0f);
         temp_host_velocity[i] = make_float4(0.0f, 0.0f, 0.0f, 0.0f);
@@ -36,11 +39,14 @@ Model_GPU::Model_GPU(const Initstate& initstate, Particles& particles): Model(in
     // Create the device buffers
     dev_position_mass = CudaBuffer(host_position_mass);
     dev_velocity = CudaBuffer(temp_host_velocity);
+    dev_acceleration = CudaBuffer(temp_host_acceleration);
 }
 
 void Model_GPU::step() {    
 	// Do calculations
-    update_positions_cu(dev_position_mass.dev_ptr(), dev_velocity.dev_ptr(), host_position_mass.size());
+    update_positions_cu(
+        dev_position_mass.dev_ptr(), dev_velocity.dev_ptr(), dev_acceleration.dev_ptr(), host_position_mass.size()
+    );
 
 	// Copy positions to host
     dev_position_mass.retrieve(host_position_mass);

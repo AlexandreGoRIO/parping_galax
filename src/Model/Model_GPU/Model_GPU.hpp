@@ -18,6 +18,7 @@ private:
     // GPU-side memory
     CudaBuffer<float4> dev_position_mass;
     CudaBuffer<float4> dev_velocity;
+    CudaBuffer<float4> dev_acceleration;
 
 public:
 	Model_GPU(const Initstate& initstate, Particles& particles);

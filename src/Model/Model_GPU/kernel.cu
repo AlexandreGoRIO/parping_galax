@@ -19,7 +19,7 @@ __device__ float4 compute_interaction(float4 position_mass_pack_i, float4 positi
 }
 
 // Updates the velocities of all the particles
-__global__ void update_velocities(float4* position_mass_pack, float4* velocity, int n_particles) {
+__global__ void compute_accelerations(const float4* position_mass_pack, float4* acceleration, int n_particles) {
     int i = blockIdx.x * blockDim.x + threadIdx.x;
     
     float4 acc = make_float4(0.0f, 0.0f, 0.0f, 0.0f);
@@ -31,12 +31,12 @@ __global__ void update_velocities(float4* position_mass_pack, float4* velocity, 
         acc += compute_interaction(position_mass_pack_i, position_mass_pack_j);
 	}
 
-    velocity[i] += acc * 2.0f;
+    acceleration[i] = acc;
 }
 
 // Updates the velocities of all the particles, but slightly faster
 // https://developer.nvidia.com/gpugems/gpugems3/part-v-physics-simulation/chapter-31-fast-n-body-simulation-cuda
-__global__ void update_velocities_tiled(float4* position_mass_pack, float4* velocity, int n_particles) {
+__global__ void compute_accelerations_tiled(const float4* position_mass_pack, float4* acceleration, int n_particles) {
     __shared__ float4 shared_particles_j[THREADS_PER_BLOCK];
 
     int i = blockIdx.x * blockDim.x + threadIdx.x;
@@ -61,25 +61,28 @@ __global__ void update_velocities_tiled(float4* position_mass_pack, float4* velo
         j_begin += THREADS_PER_BLOCK;
     }
 
-    velocity[i] += acc * 2.0f;
+    acceleration[i] = acc;
 }
 
 // Add the velocities of the particles to their position
-__global__ void update_positions(float4* position_mass_pack, float4* velocity, int n_particles) {
+__global__ void update_positions_velocities(
+    float4* position_mass_pack, float4* velocity, const float4* acceleration, int n_particles
+) {
 	int i = blockIdx.x * blockDim.x + threadIdx.x;
 
+    velocity[i] += acceleration[i] * 2.0f;
 	position_mass_pack[i] += velocity[i] * 0.1f;
 }
 
 // Do one integration step
-void update_positions_cu(float4* position_mass_pack, float4* velocity, int n_particles) {
+void update_positions_cu(float4* position_mass_pack, float4* velocity, float4* acceleration, int n_particles) {
     if (n_particles % THREADS_PER_BLOCK != 0) {
         std::cout << "error: n_particles must be a multiple of THREADS_PER_BLOCK" << std::endl;
     }
 
 	int nblocks = n_particles / THREADS_PER_BLOCK;
-    update_velocities_tiled<<<nblocks, THREADS_PER_BLOCK>>>(position_mass_pack, velocity, n_particles);
-	update_positions<<<nblocks, THREADS_PER_BLOCK>>>(position_mass_pack, velocity, n_particles);
+    compute_accelerations_tiled<<<nblocks, THREADS_PER_BLOCK>>>(position_mass_pack, acceleration, n_particles);
+	update_positions_velocities<<<nblocks, THREADS_PER_BLOCK>>>(position_mass_pack, velocity, acceleration, n_particles);
     cudaDeviceSynchronize();
 }
 
