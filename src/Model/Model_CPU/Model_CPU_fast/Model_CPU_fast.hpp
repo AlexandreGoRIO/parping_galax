@@ -4,9 +4,12 @@
 #define MODEL_CPU_FAST_HPP_
 
 #include "../Model_CPU.hpp"
+#include "particle.hpp"
 
 class Model_CPU_fast : public Model_CPU
 {
+private:
+    std::vector<Particle> host_particles;
 public:
     Model_CPU_fast(const Initstate& initstate, Particles& particles);
 
