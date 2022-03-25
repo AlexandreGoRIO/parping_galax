@@ -1,70 +1,70 @@
 #ifdef GALAX_DISPLAY_SDL2
 
 #include "Display_SDL2.hpp"
+#include <iostream>
 
-Display_SDL2
-::Display_SDL2(Particles& particles)
-: Display(particles)
+Display_SDL2::Display_SDL2(Particles& particles) : Display(particles)
 {
 	SDL_DisplayMode current;
 
-	if (SDL_Init (SDL_INIT_EVERYTHING) < 0)
-	{
+	if (SDL_Init (SDL_INIT_EVERYTHING) < 0) {
 		printf("error: unable to init sdl\n");
         // TODO throw exception
         exit(EXIT_FAILURE);
 	}
 
-	if (SDL_GetDesktopDisplayMode(0, &current))
-	{
+	if (SDL_GetDesktopDisplayMode(0, &current)) {
 		printf("error: unable to get current display mode\n");
         // TODO throw exception
         exit(EXIT_FAILURE);
 	}
 
-	window = SDL_CreateWindow("SDL", 	SDL_WINDOWPOS_CENTERED,
-										SDL_WINDOWPOS_CENTERED,
-										width, height,
-										SDL_WINDOW_OPENGL);
+	window = SDL_CreateWindow("SDL", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_OPENGL);
 
 	glWindow = SDL_GL_CreateContext(window);
 
 	GLenum status = glewInit();
 
-	if (status != GLEW_OK)
-	{
+	if (status != GLEW_OK) {
 		printf("error: unable to init glew\n");
 		// TODO throw exception
 		exit(EXIT_FAILURE);
 	}
 
 	SDL_GL_SetSwapInterval(1);
+
+    particle_colors.resize(particles.y.size());
+    particle_colors_init = false;
 }
 
-Display_SDL2::~Display_SDL2()
-{
+Display_SDL2::~Display_SDL2() {
 	SDL_GL_DeleteContext(glWindow);
 	SDL_DestroyWindow(window);
 	SDL_Quit();
 }
 
-void Display_SDL2
-::update(bool& done)
-{
-	int i;
+void Display_SDL2::update(bool& done) {
+    // First step: initialize the colors
+    if (!particle_colors_init && particles.y[0] != 0) {
+        for (int i = 0; i < particles.y.size(); ++i) {
+            if (particles.y[i] > 0.0) {
+                particle_colors[i] = {1.0, 0.6, 0.0};
+            } else {
+                particle_colors[i] = {0.0, 0.6, 1.0};
+            }
+        }
+        particle_colors_init = true;
+    }
+    
+    int i;
 
-	while (SDL_PollEvent(&event))
-	{
-
+	while (SDL_PollEvent(&event)) {
 		unsigned int e = event.type;
 
-		if (e == SDL_MOUSEMOTION)
-		{
+		if (e == SDL_MOUSEMOTION) {
 			mouseMoveX = event.motion.x;
 			mouseMoveY = height - event.motion.y - 1;
-		}
-		else if (e == SDL_KEYDOWN)
-		{
+		} else if (e == SDL_KEYDOWN) {
 			if (event.key.keysym.sym == SDLK_F1)
 				g_showGrid = !g_showGrid;
 			else if (event.key.keysym.sym == SDLK_F2)
@@ -73,8 +73,7 @@ void Display_SDL2
 				done = true;
 		}
 
-		if (e == SDL_QUIT)
-		{
+		if (e == SDL_QUIT) {
 			printf("quit\n");
 			done = true;
 		}
@@ -83,13 +82,10 @@ void Display_SDL2
 	mouseDeltaX = mouseMoveX - mouseOriginX;
 	mouseDeltaY = mouseMoveY - mouseOriginY;
 
-	if (SDL_GetMouseState(0, 0) & SDL_BUTTON_LMASK)
-	{
+	if (SDL_GetMouseState(0, 0) & SDL_BUTTON_LMASK) {
 		oldCamRot[ 0 ] += -mouseDeltaY / 5.0f;
 		oldCamRot[ 1 ] += mouseDeltaX / 5.0f;
-	}
-	else if (SDL_GetMouseState(0, 0) & SDL_BUTTON_RMASK)
-	{
+	} else if (SDL_GetMouseState(0, 0) & SDL_BUTTON_RMASK) {
 		oldCamPos[ 2 ] += (mouseDeltaY / 100.0f) * 0.5 * fabs(oldCamPos[ 2 ]);
 		oldCamPos[ 2 ]  = oldCamPos[ 2 ] > -5.0f ? -5.0f : oldCamPos[ 2 ];
 	}
@@ -111,8 +107,7 @@ void Display_SDL2
 	glMatrixMode   (GL_MODELVIEW);
 	glLoadIdentity ();
 
-	for (i = 0; i < 3; ++i)
-	{
+	for (i = 0; i < 3; ++i) {
 		newCamPos[i] += (oldCamPos[i] - newCamPos[i]) * g_inertia;
 		newCamRot[i] += (oldCamRot[i] - newCamRot[i]) * g_inertia;
 	}
@@ -127,12 +122,8 @@ void Display_SDL2
 	if (g_showAxes)
 		ShowAxes();
 
-	for (int i = 0; i < particles.x.size(); i++)
-	{
-		glBegin   (GL_POINTS);
-		glColor3f (1.0f, 1.0f, 1.0f);
-		glVertex3f(particles.x[i], particles.y[i], particles.z[i]);
-		glEnd();
+	for (int i = 0; i < particles.x.size(); i++) {
+		DrawPoint(particles.x[i], particles.y[i], particles.z[i], particle_colors[i]);
 	}
 
 	glMatrixMode  (GL_PROJECTION);
@@ -146,31 +137,25 @@ void Display_SDL2
 }
 
 
-void Display_SDL2
-::DrawPoint(float x, float y, float z) const
-{
-		glBegin(GL_POINTS);
-		glColor3f(1.0f, 1.0f, 1.0f);
-		glVertex3f(x, y, z);
-		glEnd();
+void Display_SDL2::DrawPoint(float x, float y, float z, std::array<float, 3> color) const {
+    glBegin(GL_POINTS);
+    glColor3f(color[0], color[1], color[2]);
+    glVertex3f(x, y, z);
+    glEnd();
 }
 
-void Display_SDL2
-::DrawGridXZ(float ox, float oy, float oz, int w, int h, float sz) const
-{
+void Display_SDL2::DrawGridXZ(float ox, float oy, float oz, int w, int h, float sz) const {
 
 	glLineWidth(1.0f);
 	glBegin    (GL_LINES);
 	glColor3f  (0.48f, 0.48f, 0.48f);
 
-	for (auto i = 0; i <= h; ++i)
-	{
+	for (auto i = 0; i <= h; ++i) {
 		glVertex3f(ox, oy, oz + i * sz);
 		glVertex3f(ox + w * sz, oy, oz + i * sz);
 	}
 
-	for (auto i = 0; i <= h; ++i)
-	{
+	for (auto i = 0; i <= h; ++i) {
 		glVertex3f(ox + i * sz, oy, oz);
 		glVertex3f(ox + i * sz, oy, oz + h * sz);
 	}
@@ -178,9 +163,7 @@ void Display_SDL2
 	glEnd();
 }
 
-void Display_SDL2
-::ShowAxes() const
-{
+void Display_SDL2::ShowAxes() const {
 	glLineWidth(2.0f);
 	glBegin(GL_LINES);
 

@@ -8,6 +8,8 @@
 #include <SDL2/SDL_opengl.h>
 
 #include "../Display.hpp"
+#include <vector>
+#include <array>
 
 class Display_SDL2 : public Display
 {
@@ -34,6 +36,9 @@ private:
 	SDL_GLContext glWindow;
 	SDL_Window*   window;
 
+    std::vector<std::array<float, 3>> particle_colors;
+    bool particle_colors_init;
+
 public:
 	Display_SDL2(Particles& particles);
 	~Display_SDL2();
@@ -41,9 +46,9 @@ public:
 	virtual void update(bool& done);
 
 private:
-	void DrawPoint (float x,  float y,  float z                          ) const;
-	void DrawGridXZ(float ox, float oy, float oz, int w, int h, float sz ) const;
-	void ShowAxes  (                                                     ) const;
+	void DrawPoint (float x,  float y,  float z, std::array<float, 3> color) const;
+	void DrawGridXZ(float ox, float oy, float oz, int w, int h, float sz) const;
+	void ShowAxes  () const;
 };
 
 #endif // DISPLAY_SDL2_HPP_
